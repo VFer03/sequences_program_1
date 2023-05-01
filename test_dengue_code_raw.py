@@ -1,3 +1,5 @@
+# This is a test with given parameters and fields
+
 from Bio import Entrez, SeqIO
 import os
 Entrez.email = "eliasvera2013@gmail.com" # cambia esto
@@ -8,12 +10,12 @@ Generalmente, se añadirá 'Parámetro'[Campo al que corresponde] seguido de una
 Ir cambiando los parámetros 'País' y los campos [Publication Date] (puede ser en los intervalos que se prefieran)
 Si no se encuentra ningún resultado con los parámetros ejecutados se devolverá una lista vacía -> []. Puede deberse a conflictos con el país o año
 """
-organism = "Organismo"
-country = "País"
-start_date = "Desde_año"
-end_date = "Hasta_año"
-min_length = "0000000000"
-max_length = "0000000000"
+organism = "Dengue virus"
+country = "Brazil" # cambiar esto (sensible)
+start_date = "2010" # esto
+end_date = "2015" # y esto
+min_length = "10000"
+max_length = "20000"
 parámetros = '((((("{0}"[Organism] OR ("{0}"[Organism] OR {0}[All Fields])) AND complete[All Fields] AND genome[All Fields])\
         AND country=[All Fields] AND "{1}"[Text Word]) AND ("{2}"[PDAT] : "{3}"[PDAT])) AND {4}[SLEN] : {5}[SLEN])\
         NOT UNVERIFIED[Title]'.format(organism, country, start_date, end_date, min_length, max_length)
@@ -69,5 +71,6 @@ for id in id_list:
     seq_handle.close()
 
 print("Los ID procesados fueron: \n" + str(id_procesados))
+print("Terminado y guardado, a continuación, el archivo se abrirá automáticamente.")
 print("La ubicación del .txt es la misma que la de este programa (probablemente descargas)")
 os.startfile(filename)
