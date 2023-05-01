@@ -60,17 +60,17 @@ while True:
             with open(filename, "w") as file:
                 fst_format = seq_handle.read()
                 fst_format = fst_format.replace(">", "")
-                file.write("> " + "1 " +start_date + "-" + end_date + " | " + fst_format)
+                file.write("> " + start_date + "-" + end_date + " | " + fst_format)
         elif os.path.isfile(filename) and id in id_procesados:
             with open(filename, "w") as file:
                 fst_format = seq_handle.read()
                 fst_format = fst_format.replace(">", "")
-                file.write("> " + "2 " +start_date + "-" + end_date + " | " + fst_format)
+                file.write("> " + start_date + "-" + end_date + " | " + fst_format)
         else:
             with open(filename, "a") as file:
                 fst_format = seq_handle.read()
                 fst_format = fst_format.replace(">", "")
-                file.write("> " + "2 " +start_date + "-" + end_date + " | " + fst_format)
+                file.write("> " + start_date + "-" + end_date + " | " + fst_format)
         id_procesados.append(id)
         seq_handle.close()
 
@@ -101,17 +101,17 @@ while True:
                 with open(filename, "w") as file:
                     fst_format = seq_handle.read()
                     fst_format = fst_format.replace(">", "")
-                    file.write("> " + "1 " +start_date + "-" + end_date + " | " + fst_format)
+                    file.write("> " + start_date + "-" + end_date + " | " + fst_format)
             elif os.path.isfile(filename) and id in id_procesados:
                 with open(filename, "w") as file:
                     fst_format = seq_handle.read()
                     fst_format = fst_format.replace(">", "")
-                    file.write("> " + "2 " +start_date + "-" + end_date + " | " + fst_format)
+                    file.write("> " + start_date + "-" + end_date + " | " + fst_format)
             else:
                 with open(filename, "a") as file:
                     fst_format = seq_handle.read()
                     fst_format = fst_format.replace(">", "")
-                    file.write("> " + "2 " +start_date + "-" + end_date + " | " + fst_format)
+                    file.write("> " + start_date + "-" + end_date + " | " + fst_format)
             id_procesados.append(id)
             seq_handle.close()
 
