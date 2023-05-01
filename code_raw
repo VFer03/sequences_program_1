@@ -61,11 +61,6 @@ while True:
                 fst_format = seq_handle.read()
                 fst_format = fst_format.replace(">", "")
                 file.write("> " + start_date + "-" + end_date + " | " + fst_format)
-        elif os.path.isfile(filename) and id in id_procesados:
-            with open(filename, "w") as file:
-                fst_format = seq_handle.read()
-                fst_format = fst_format.replace(">", "")
-                file.write("> " + start_date + "-" + end_date + " | " + fst_format)
         else:
             with open(filename, "a") as file:
                 fst_format = seq_handle.read()
@@ -98,11 +93,6 @@ while True:
             seq_handle = Entrez.efetch(db="nucleotide", id=id, rettype="fasta", retmode="text")
             filename = "seq_fasta_" + country + "_" + start_date + "-" + end_date + ".txt"
             if not os.path.isfile(filename): # si no existe ningún documento con el nombre de "filename" crear uno nuevo
-                with open(filename, "w") as file:
-                    fst_format = seq_handle.read()
-                    fst_format = fst_format.replace(">", "")
-                    file.write("> " + start_date + "-" + end_date + " | " + fst_format)
-            elif os.path.isfile(filename) and id in id_procesados:
                 with open(filename, "w") as file:
                     fst_format = seq_handle.read()
                     fst_format = fst_format.replace(">", "")
