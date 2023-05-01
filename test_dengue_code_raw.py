@@ -2,7 +2,7 @@
 
 from Bio import Entrez, SeqIO
 import os
-Entrez.email = "eliasvera2013@gmail.com" # cambia esto
+Entrez.email = "your@mail.com" # cambia esto
 # Entrez.esearch se encarga de buscar en la base de datos del NCBI
 """
 La variable parámetro se puede editar según la siguiente lista https://www.ncbi.nlm.nih.gov/books/NBK49540/
